@@ -5,6 +5,7 @@ import java.io.*;
 
 class Player implements Runnable{
 	private Thread t;
+	private final static Object LOCK = new Object();
 	private Socket s;
 	private InputStream in;
 	private OutputStream out;
@@ -14,6 +15,12 @@ class Player implements Runnable{
 	private int[][][] ship1;
 	private boolean iAmReady;
 	private int iAmFirst;
+	private String cellAttackedStr;
+	boolean cellAttacked;
+	private int hisShipsDead;
+	private boolean amIWin;
+	private boolean infinity;
+	
 	
 	
 	public Player(Socket s, String name) {
@@ -27,11 +34,16 @@ class Player implements Runnable{
 	
 	{
 		ship4 = new int[1][4][3];
-		ship3= new int[2][3][3];
+		ship3 = new int[2][3][3];
 		ship2 = new int[3][2][3];
 		ship1 = new int[4][1][3];
 		iAmReady = false;
 		iAmFirst = 0;//0-не определено, 1-первый,2-второй
+		cellAttackedStr = "";
+		cellAttacked = false;
+		amIWin = false;
+		hisShipsDead = 0;
+		infinity = true;
 	}//initBlock
 	
 	@Override
@@ -41,17 +53,24 @@ class Player implements Runnable{
 			try {t.sleep(100);} catch (InterruptedException e) {}//sleep
 		}//while
 		if(iAmFirst == 2) {waiting();}
-		boolean infinity = true;
 		while(infinity) {
-			putObject("giveMeCell.");
+			putObject("giveCell.");
 			String checkCellreturn = checkCell();
-			putObject(checkCell());//принимаю номер клетки и отвечаю
-			if(checkCellreturn != "0.") {
-				putObject("giveMeCell.");
+			if(checkCellreturn == "dead.") {
+				hisShipsDead++;
+				if(hisShipsDead == 10) {
+					amIWin = true;
+					putObject("winner.");
+				}
+			}
+			putObject(checkCellreturn);//принимаю номер клетки и отвечаю
+			if(checkCellreturn != "miss.") {
+				try {t.sleep(100);} catch (InterruptedException e) {}
+				putObject("giveCell.");
 			}//если не промахнулся, то повторяешь ход
 			else {
 				changeReady();
-				notify();
+				notifyPlayer();
 				waiting();
 			}
 			
@@ -64,56 +83,61 @@ class Player implements Runnable{
 	
 	private String checkCell() {
 		String cell = getObject();
-		int y = cell.charAt(0);
-		int x = cell.charAt(1);
-		for (int i = 0; i < 10; i++) {
+		int y = cell.charAt(0) - '0';
+		int x = cell.charAt(1) - '0';
+		cellAttackedStr = cell;
+		cellAttacked = true;
+		for (int i = 0; i < 4; i++) {
 			if(i == 0) {
 				for (int j = 0; j < 1; j++) {
 					for(int k = 0; k < 4; k++) {
 						if(ship4[j][k][0] == y &&
 						   ship4[j][k][1] == x) {
+							ship4[j][k][2] = 1;
 							boolean isDead = true;
 							for(int m = 0; m < 4; m++) {
 								if(ship4[j][m][2] == 0) {
 									isDead = false;
 								}
 							}//проверка остальных клеток(чтобы констатировать смерть)
-							if (isDead) {return "2.";}//умер
-							else {return "1.";}//просто ранен
+							if (isDead) {return "dead.";}//умер
+							else {return "injury.";}//просто ранен
 						}//попал
 					}//for k (проход по клеткам корабля)
 				}//for j(проход по кораблям одного типа)
 			}//четырехпалубник
-			else if(i > 0 && i < 3) {
+			else if(i==2) {
 				for (int j = 0; j < 2; j++) {
 					for(int k = 0; k < 3; k++) {
 						if(ship3[j][k][0] == y &&
 						   ship3[j][k][1] == x) {
+							ship3[j][k][2] = 1;
 							boolean isDead = true;
 							for(int m = 0; m < 3; m++) {
 								if(ship3[j][m][2] == 0) {
 									isDead = false;
 								}
 							}//проверка остальных клеток(чтобы констатировать смерть)
-							if (isDead) {return "2.";}//умер
-							else {return "1.";}//просто ранен
+							if (isDead) {return "dead.";}//умер
+							else {return "injury.";}//просто ранен
 						}//попал
 					}//for k (проход по клеткам корабля)
 				}//for j(проход по кораблям одного типа)
 			}//трехпалубники
-			else if(i > 2 && i < 5) {
+			else if(i == 3) {
 				for (int j = 0; j < 3; j++) {
 					for(int k = 0; k < 2; k++) {
 						if(ship2[j][k][0] == y &&
 						   ship2[j][k][1] == x) {
+							ship2[j][k][2] = 1;
 							boolean isDead = true;
 							for(int m = 0; m < 2; m++) {
 								if(ship2[j][m][2] == 0) {
 									isDead = false;
 								}
 							}//проверка остальных клеток(чтобы констатировать смерть)
-							if (isDead) {return "2";}//умер
-							else {return "1";}//просто ранен
+							if (isDead) {return "dead.";}//умер
+							else {return "injury.";}//просто ранен
 						}//попал
 					}//for k (проход по клеткам корабля)
 				}//for j(проход по кораблям одного типа)
@@ -123,20 +147,21 @@ class Player implements Runnable{
 					for(int k = 0; k < 1; k++) {
 						if(ship1[j][k][0] == y &&
 						   ship1[j][k][1] == x) {
+							ship1[j][k][2] = 1;
 							boolean isDead = true;
 							for(int m = 0; m < 1; m++) {
 								if(ship1[j][m][2] == 0) {
 									isDead = false;
 								}
 							}//проверка остальных клеток(чтобы констатировать смерть)
-							if (isDead) {return "2.";}//умер
-							else {return "1.";}//просто ранен
+							if (isDead) {return "dead.";}//умер
+							else {return "injury.";}//просто ранен
 						}//попал
 					}//for k (проход по клеткам корабля)
 				}//for j(проход по кораблям одного типа)
 			}//однопалубники
 		}//for i(проход по всем кораблям)
-		return "0."; // не попал
+		return "miss."; // не попал
 	}//checkCell
 	
 	private String getObject(){
@@ -158,46 +183,83 @@ class Player implements Runnable{
 	}//getObj
 	
 	
-	public static void putObject(String str){
+	public void putObject(String str){
 		try {	   		   		    
 		    ByteArrayOutputStream bos = new ByteArrayOutputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(bos);		   
 			Object obj = new String(str);			            
 			oos.writeObject(obj);
 			byte[] bts = bos.toByteArray();
+			out.write(bts);
 		}	catch (Exception e){}
 		
 	}//PutObject
 	
+	public int[][][] swap(int number){
+		if(number == 1) {
+			return ship4;
+		}else if (number == 2) {
+			return ship3;
+		}
+		else if(number == 3) {
+			return ship2;
+		}else {
+			return ship1;
+		}
+	}
+	
+	public void swap2(int[][][] ship, int number){
+		if(number == 1) {
+			ship4 = ship;
+		}else if (number == 2) {
+			ship3 = ship;
+		}
+		else if(number == 3) {
+			ship2 = ship;
+		}else {
+			ship1 = ship;
+		}
+	}
+	
+	public void cellAtacked(String cell) {
+		putObject(cell + "attacked.");
+	}
+	public boolean isCellAttacked() {
+		return cellAttacked;
+	}
+	public String getAttackedCell() {
+		cellAttacked = false;
+		return cellAttackedStr;
+	}
 	
 	private void initializeMyFleet() {
-		String ship4S = getObject();
 		for(int i = 0; i < 4; i++) {
-			ship4[0][i][0] = (ship4S.charAt(i * 2));
-			ship4[0][i][1] = (ship4S.charAt(i * 2 + 1));
+			String ship4S = getObject();
+			ship4[0][i][0] = (ship4S.charAt(0) - '0');
+			ship4[0][i][1] = (ship4S.charAt(1) - '0');
 			ship4[0][i][2] = 0;//ранена ли клетка
 		}//четырехпалубник
 		for(int i = 0; i < 2; i++) {
-			String ship3S = getObject();
 			for(int j = 0; j < 3; j++) {
-				ship3[i][j][0] = (ship3S.charAt(j * 2));
-				ship3[i][j][1] = (ship3S.charAt(j * 2 + 1));
+				String ship3S = getObject();
+				ship3[i][j][0] = (ship3S.charAt(0) - '0');
+				ship3[i][j][1] = (ship3S.charAt(1) - '0');
 				ship3[i][j][2] = 0;//ранена ли клетка
 			}
 		}//трехпалубники
 		for(int i = 0; i < 3; i++) {
-			String ship2S = getObject();
 			for(int j = 0; j < 2; j++) {
-				ship2[i][j][0] = (ship2S.charAt(j * 2));
-				ship2[i][j][1] = (ship2S.charAt(j * 2 + 1));
+				String ship2S = getObject();
+				ship2[i][j][0] = (ship2S.charAt(0) - '0');
+				ship2[i][j][1] = (ship2S.charAt(1) - '0');
 				ship2[i][j][2] = 0;//ранена ли клетка
 			}
 		}//двухпалубники
 		for(int i = 0; i < 4; i++) {
-			String ship1S = getObject();
 			for(int j = 0; j < 1; j++) {
-				ship1[i][j][0] = (ship1S.charAt(j * 2));
-				ship1[i][j][1] = (ship1S.charAt(j * 2 + 1));
+				String ship1S = getObject();
+				ship1[i][j][0] = (ship1S.charAt(0) - '0');
+				ship1[i][j][1] = (ship1S.charAt(1) - '0');
 				ship1[i][j][2] = 0;//ранена ли клетка
 			}
 		}//однопалубники
@@ -219,8 +281,31 @@ class Player implements Runnable{
 	}//first
 	
 	private void waiting() {
-		try {wait();} catch (InterruptedException e) {}
-	}//waiting (чтобы не липить везде трай кэтч)
+		 synchronized (LOCK) {
+			 try {
+				 LOCK.wait();
+             } catch (InterruptedException e) {
+            	 e.printStackTrace();
+             }
+         }
+	}//waiting
+	private void notifyPlayer() {
+		synchronized (LOCK) {
+			 LOCK.notify();
+        }
+	}
+	
+	public boolean areYouWin() {
+		return amIWin;
+	}
+	
+	public void youAreLoser() {
+		putObject("loser.");
+	}
+	
+	public void die() {
+		infinity = false;
+	}
 	
 }//Player
 
@@ -231,6 +316,7 @@ class Game implements Runnable {
 	private Player player1;
 	private Player player2;
 	private boolean turn;
+	private boolean infinity;
 
 	public Game(Socket s, Socket s2) {
 		try {
@@ -238,6 +324,7 @@ class Game implements Runnable {
 			player1 = new Player(s, "Player 1");
 			player2 = new Player(s2, "Player 2");
 			turn = true;
+			infinity = true;
 			t.start();
 		} catch (Exception e) {}//catch
 	}//Construtor
@@ -246,11 +333,27 @@ class Game implements Runnable {
 	public void run() {
 		waitPlayer(player1);
 		waitPlayer(player2);
+		int[][][] swap = new int[1][4][3];
+		swap = player1.swap(1);
+		player1.swap2(player2.swap(1),1);
+		player2.swap2(swap, 1);
+		swap = new int[2][3][3];
+		swap = player1.swap(2);
+		player1.swap2(player2.swap(2),2);
+		player2.swap2(swap, 2);
+		swap = new int[3][2][3];
+		swap = player1.swap(3);
+		player1.swap2(player2.swap(3),3);
+		player2.swap2(swap, 3);
+		swap = new int[4][1][3];
+		swap = player1.swap(4);
+		player1.swap2(player2.swap(4),4);
+		player2.swap2(swap, 4);
 		player1.changeReady();
 		player2.changeReady();
 		player1.youAreFirst(true);
 		player2.youAreFirst(false);
-		while(true) {
+		while(infinity) {
 			if(turn) {
 				waitPlayer(player1);
 				player1.changeReady();
@@ -267,13 +370,35 @@ class Game implements Runnable {
 	
 	private boolean waitPlayer(Player player){
 		while(true) {
+			if(turn) {
+				if(player1.cellAttacked) {
+					player2.cellAtacked(player1.getAttackedCell());
+				}
+				if(player1.areYouWin()) {
+					player2.youAreLoser();
+					player1.die();
+					player2.die();
+				}
+			}else {
+				if(player2.cellAttacked) {
+					player1.cellAtacked(player2.getAttackedCell());
+				}
+				if(player2.areYouWin()) {
+					player1.youAreLoser();
+					player1.die();
+					player2.die();
+				}
+			}
 			if (player.isReady()) {return true;}
 			try {t.sleep(200);} catch (InterruptedException e) {}//sleep
 		}//while
 		
 	}//wait
 
-
+	private void die() {
+		infinity = false;
+	}
+	
 }//Game
 
 class Server {
