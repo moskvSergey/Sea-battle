@@ -449,8 +449,9 @@ class Waiter implements Runnable{
 			for(int i = 0; i < 20; i++) {
 				try {
 					if(Server.slots[numb] == 0) {flag = false;break;}
+					if(i == numb) {continue;}
 					if(Server.slots[i] == 1) {
-						if (against == "none." && Server.against[i] == "none.") {
+						if (against.contains("none.") && Server.against[i].contains("none")) {
 							Server.startGame(numb, i);
 							flag = false;
 							break;
