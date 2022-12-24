@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <Label alignment="CENTER" layoutX="66.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="A" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="98.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Б" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="130.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="В" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="162.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Г" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="194.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Д" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="226.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Е" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="258.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Ж" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="290.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="З" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="322.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="И" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="354.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="К" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="65.0" prefHeight="32.0" prefWidth="32.0" text="1" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="97.0" prefHeight="32.0" prefWidth="32.0" text="2" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="129.0" prefHeight="32.0" prefWidth="32.0" text="3" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="161.0" prefHeight="32.0" prefWidth="32.0" text="4" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="193.0" prefHeight="32.0" prefWidth="32.0" text="5" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="225.0" prefHeight="32.0" prefWidth="32.0" text="6" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="257.0" prefHeight="32.0" prefWidth="32.0" text="7" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="289.0" prefHeight="32.0" prefWidth="32.0" text="8" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="321.0" prefHeight="32.0" prefWidth="32.0" text="9" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="353.0" prefHeight="32.0" prefWidth="32.0" text="10" textAlignment="CENTER" />
+            <Button fx:id="cell00" disable="true" layoutX="66.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell00" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell01" disable="true" layoutX="98.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell01" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell02" disable="true" layoutX="130.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell02" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell03" disable="true" layoutX="162.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell03" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell04" disable="true" layoutX="194.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell04" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell05" disable="true" layoutX="226.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell05" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell06" disable="true" layoutX="258.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell06" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell07" disable="true" layoutX="290.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell07" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell08" disable="true" layoutX="322.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell08" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell09" disable="true" layoutX="354.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell09" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell10" disable="true" layoutX="66.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell10" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell11" disable="true" layoutX="98.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell11" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell12" disable="true" layoutX="130.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell12" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell13" disable="true" layoutX="162.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell13" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell14" disable="true" layoutX="194.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell14" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell15" disable="true" layoutX="226.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell15" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell16" disable="true" layoutX="258.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell16" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell17" disable="true" layoutX="290.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell17" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell18" disable="true" layoutX="322.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell18" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell19" disable="true" layoutX="354.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell19" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell20" disable="true" layoutX="66.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell20" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell21" disable="true" layoutX="98.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell21" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell22" disable="true" layoutX="130.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell22" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell23" disable="true" layoutX="162.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell23" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell24" disable="true" layoutX="194.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell24" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell25" disable="true" layoutX="226.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell25" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell26" disable="true" layoutX="258.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell26" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell27" disable="true" layoutX="290.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell27" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell28" disable="true" layoutX="322.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell28" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell29" disable="true" layoutX="354.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell29" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell30" disable="true" layoutX="66.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell30" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell31" disable="true" layoutX="98.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell31" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell32" disable="true" layoutX="130.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell32" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell33" disable="true" layoutX="162.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell33" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell34" disable="true" layoutX="194.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell34" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell35" disable="true" layoutX="226.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell35" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell36" disable="true" layoutX="258.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell36" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell37" disable="true" layoutX="290.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell37" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell38" disable="true" layoutX="322.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell38" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell39" disable="true" layoutX="354.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell39" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell40" disable="true" layoutX="66.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell40" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell41" disable="true" layoutX="98.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell41" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell42" disable="true" layoutX="130.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell42" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell43" disable="true" layoutX="162.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell43" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell44" disable="true" layoutX="194.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell44" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell45" disable="true" layoutX="226.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell45" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell46" disable="true" layoutX="258.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell46" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell47" disable="true" layoutX="290.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell47" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell48" disable="true" layoutX="322.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell48" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell49" disable="true" layoutX="354.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell49" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell50" disable="true" layoutX="66.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell50" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell51" disable="true" layoutX="98.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell51" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell52" disable="true" layoutX="130.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell52" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell53" disable="true" layoutX="162.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell53" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell54" disable="true" layoutX="194.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell54" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell55" disable="true" layoutX="226.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell55" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell56" disable="true" layoutX="258.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell56" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell57" disable="true" layoutX="290.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell57" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell58" disable="true" layoutX="322.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell58" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell59" disable="true" layoutX="354.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell59" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell60" disable="true" layoutX="66.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell60" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell61" disable="true" layoutX="98.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell61" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell62" disable="true" layoutX="130.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell62" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell63" disable="true" layoutX="162.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell63" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell64" disable="true" layoutX="194.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell64" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell65" disable="true" layoutX="226.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell65" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell66" disable="true" layoutX="258.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell66" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell67" disable="true" layoutX="290.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell67" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell68" disable="true" layoutX="322.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell68" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell69" disable="true" layoutX="354.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell69" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell70" disable="true" layoutX="66.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell70" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell71" disable="true" layoutX="98.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell71" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell72" disable="true" layoutX="130.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell72" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell73" disable="true" layoutX="162.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell73" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell74" disable="true" layoutX="194.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell74" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell75" disable="true" layoutX="226.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell75" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell76" disable="true" layoutX="258.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell76" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell77" disable="true" layoutX="290.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell77" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell78" disable="true" layoutX="322.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell78" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell79" disable="true" layoutX="354.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell79" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell80" disable="true" layoutX="66.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell80" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell81" disable="true" layoutX="98.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell81" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell82" disable="true" layoutX="130.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell82" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell83" disable="true" layoutX="162.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell83" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell84" disable="true" layoutX="194.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell84" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell85" disable="true" layoutX="226.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell85" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell86" disable="true" layoutX="258.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell86" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell87" disable="true" layoutX="290.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell87" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell88" disable="true" layoutX="322.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell88" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell89" disable="true" layoutX="354.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell89" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell90" disable="true" layoutX="66.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell90" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell91" disable="true" layoutX="98.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell91" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell92" disable="true" layoutX="130.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell92" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell93" disable="true" layoutX="162.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell93" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell94" disable="true" layoutX="194.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell94" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell95" disable="true" layoutX="226.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell95" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell96" disable="true" layoutX="258.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell96" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell97" disable="true" layoutX="290.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell97" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell98" disable="true" layoutX="322.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell98" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell99" disable="true" layoutX="354.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell99" prefHeight="32.0" prefWidth="32.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="401.0" prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <Label alignment="CENTER" layoutX="66.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="A" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="98.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Б" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="130.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="В" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="162.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Г" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="194.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Д" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="226.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Е" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="258.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="Ж" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="290.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="З" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="322.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="И" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="354.0" layoutY="33.0" prefHeight="32.0" prefWidth="32.0" text="К" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="65.0" prefHeight="32.0" prefWidth="32.0" text="1" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="97.0" prefHeight="32.0" prefWidth="32.0" text="2" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="129.0" prefHeight="32.0" prefWidth="32.0" text="3" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="161.0" prefHeight="32.0" prefWidth="32.0" text="4" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="193.0" prefHeight="32.0" prefWidth="32.0" text="5" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="225.0" prefHeight="32.0" prefWidth="32.0" text="6" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="257.0" prefHeight="32.0" prefWidth="32.0" text="7" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="289.0" prefHeight="32.0" prefWidth="32.0" text="8" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="321.0" prefHeight="32.0" prefWidth="32.0" text="9" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="353.0" prefHeight="32.0" prefWidth="32.0" text="10" textAlignment="CENTER" />
+            <Button fx:id="cell001" disable="true" layoutX="66.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell00" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell011" disable="true" layoutX="98.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell01" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell021" disable="true" layoutX="130.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell02" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell031" disable="true" layoutX="162.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell03" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell041" disable="true" layoutX="194.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell04" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell051" disable="true" layoutX="226.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell05" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell061" disable="true" layoutX="258.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell06" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell071" disable="true" layoutX="290.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell07" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell081" disable="true" layoutX="322.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell08" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell091" disable="true" layoutX="354.0" layoutY="65.0" mnemonicParsing="false" onAction="#clickCell09" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell101" disable="true" layoutX="66.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell10" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell111" disable="true" layoutX="98.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell11" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell121" disable="true" layoutX="130.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell12" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell131" disable="true" layoutX="162.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell13" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell141" disable="true" layoutX="194.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell14" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell151" disable="true" layoutX="226.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell15" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell161" disable="true" layoutX="258.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell16" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell171" disable="true" layoutX="290.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell17" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell181" disable="true" layoutX="322.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell18" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell191" disable="true" layoutX="354.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickCell19" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell201" disable="true" layoutX="66.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell20" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell211" disable="true" layoutX="98.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell21" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell221" disable="true" layoutX="130.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell22" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell231" disable="true" layoutX="162.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell23" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell241" disable="true" layoutX="194.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell24" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell251" disable="true" layoutX="226.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell25" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell261" disable="true" layoutX="258.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell26" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell271" disable="true" layoutX="290.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell27" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell281" disable="true" layoutX="322.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell28" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell291" disable="true" layoutX="354.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickCell29" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell301" disable="true" layoutX="66.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell30" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell311" disable="true" layoutX="98.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell31" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell321" disable="true" layoutX="130.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell32" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell331" disable="true" layoutX="162.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell33" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell341" disable="true" layoutX="194.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell34" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell351" disable="true" layoutX="226.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell35" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell361" disable="true" layoutX="258.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell36" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell371" disable="true" layoutX="290.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell37" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell381" disable="true" layoutX="322.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell38" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell391" disable="true" layoutX="354.0" layoutY="161.0" mnemonicParsing="false" onAction="#clickCell39" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell401" disable="true" layoutX="66.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell40" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell411" disable="true" layoutX="98.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell41" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell421" disable="true" layoutX="130.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell42" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell431" disable="true" layoutX="162.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell43" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell441" disable="true" layoutX="194.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell44" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell451" disable="true" layoutX="226.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell45" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell461" disable="true" layoutX="258.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell46" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell471" disable="true" layoutX="290.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell47" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell481" disable="true" layoutX="322.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell48" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell491" disable="true" layoutX="354.0" layoutY="193.0" mnemonicParsing="false" onAction="#clickCell49" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell501" disable="true" layoutX="66.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell50" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell511" disable="true" layoutX="98.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell51" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell521" disable="true" layoutX="130.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell52" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell531" disable="true" layoutX="162.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell53" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell541" disable="true" layoutX="194.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell54" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell551" disable="true" layoutX="226.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell55" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell561" disable="true" layoutX="258.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell56" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell571" disable="true" layoutX="290.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell57" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell581" disable="true" layoutX="322.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell58" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell591" disable="true" layoutX="354.0" layoutY="225.0" mnemonicParsing="false" onAction="#clickCell59" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell601" disable="true" layoutX="66.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell60" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell611" disable="true" layoutX="98.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell61" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell621" disable="true" layoutX="130.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell62" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell631" disable="true" layoutX="162.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell63" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell641" disable="true" layoutX="194.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell64" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell651" disable="true" layoutX="226.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell65" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell661" disable="true" layoutX="258.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell66" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell671" disable="true" layoutX="290.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell67" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell681" disable="true" layoutX="322.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell68" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell691" disable="true" layoutX="354.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickCell69" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell701" disable="true" layoutX="66.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell70" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell711" disable="true" layoutX="98.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell71" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell721" disable="true" layoutX="130.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell72" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell731" disable="true" layoutX="162.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell73" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell741" disable="true" layoutX="194.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell74" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell751" disable="true" layoutX="226.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell75" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell761" disable="true" layoutX="258.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell76" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell771" disable="true" layoutX="290.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell77" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell781" disable="true" layoutX="322.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell78" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell791" disable="true" layoutX="354.0" layoutY="289.0" mnemonicParsing="false" onAction="#clickCell79" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell801" disable="true" layoutX="66.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell80" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell811" disable="true" layoutX="98.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell81" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell821" disable="true" layoutX="130.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell82" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell831" disable="true" layoutX="162.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell83" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell841" disable="true" layoutX="194.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell84" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell851" disable="true" layoutX="226.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell85" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell861" disable="true" layoutX="258.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell86" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell871" disable="true" layoutX="290.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell87" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell881" disable="true" layoutX="322.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell88" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell891" disable="true" layoutX="354.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickCell89" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell901" disable="true" layoutX="66.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell90" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell911" disable="true" layoutX="98.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell91" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell921" disable="true" layoutX="130.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell92" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell931" disable="true" layoutX="162.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell93" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell941" disable="true" layoutX="194.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell94" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell951" disable="true" layoutX="226.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell95" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell961" disable="true" layoutX="258.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell96" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell971" disable="true" layoutX="290.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell97" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell981" disable="true" layoutX="322.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell98" prefHeight="32.0" prefWidth="32.0" />
+            <Button fx:id="cell991" disable="true" layoutX="354.0" layoutY="353.0" mnemonicParsing="false" onAction="#clickCell99" prefHeight="32.0" prefWidth="32.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
