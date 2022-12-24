@@ -8,7 +8,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class Model implements Runnable {
 	private InputStream in;
@@ -41,6 +40,9 @@ public class Model implements Runnable {
 	
 	@Override
 	public void run() {
+		putObject(user.login+".");
+		try {t.sleep(1000);} catch (InterruptedException e1) {}
+		putObject(user.enemy+".");
 		while(infinity) {
 			if(timeToSend) {
 				timeToSend = false;
@@ -70,10 +72,6 @@ public class Model implements Runnable {
 		}
 		private void waitServer() {
 			strFromServ = getObject();
-			if(strFromServ.contains("giveCell.")) {
-			}
-			
-			//System.out.print("Client: " + strFromServ + '\n');
 			timeToTake = true;
 		}
 	}

@@ -1,8 +1,8 @@
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
  
 public class Main extends Application{
@@ -16,14 +16,12 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) throws Exception {
          
-        Parent root = FXMLLoader.load(Main.class.getResource("view/View.fxml")); 
+        Parent root = FXMLLoader.load(Main.class.getResource("view/ViewAutor.fxml")); 
         Scene scene = new Scene(root);
          
         stage.setScene(scene);
          
-        stage.setTitle("Sea Battle");
-        stage.setWidth(900);
-        stage.setHeight(500);
+        stage.setTitle("Авторизация");
          
         stage.show();
     }

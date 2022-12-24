@@ -1,17 +1,10 @@
 package controller;
 
 
-import java.awt.Color;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
-import javafx.scene.layout.CornerRadii;
 import model.Model;
 
 
@@ -57,6 +50,20 @@ class ControllerToModel implements Runnable {
 	
 	@Override
 	public void run() {
+		while(true) {
+			if (model.canITakeFromServ()) {
+				String servString = model.takeFromServer();
+				if (servString.contains("start.")) {
+					break;
+				}
+			}
+			else {
+				try {
+					t.sleep(20);
+				} catch (InterruptedException e) {}
+			}
+			
+		}	
 		updateButtons();
 		while(done != 20) {
 			if(buttonIsClicked) {buttonClicked();}

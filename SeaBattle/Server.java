@@ -1,5 +1,12 @@
-import java.net.*;
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 
 
@@ -48,6 +55,8 @@ class Player implements Runnable{
 	
 	@Override
 	public void run() {
+		putObject("start.");
+		try {t.sleep(500);} catch (InterruptedException e) {}//sleep
 		initializeMyFleet();
 		while(iAmFirst == 0) {
 			try {t.sleep(100);} catch (InterruptedException e) {}//sleep
@@ -407,14 +416,127 @@ class Game implements Runnable {
 	
 }//Game
 
-class Server {
+
+
+class Waiter implements Runnable{
+	private Thread t;
+	private Socket s;
+	private InputStream in;
+	private int numb;
+	private String myName;
+	private String against;
+	
+	public Waiter(Socket s, int numb) {
+		try {
+			this.t = new Thread(this, "Waiter");
+			in = s.getInputStream();
+			this.numb = numb;
+			t.start();
+		} catch (Exception e) {}
+	}//Constructor
+	
+	{
+	}//init
+	
+	@Override
+	public void run() {
+		myName = getObject();
+		against = getObject();
+		Server.users[numb] = myName;
+		Server.against[numb] = against;
+		boolean flag = true;
+		while(flag) {
+			for(int i = 0; i < 20; i++) {
+				try {
+					if(Server.slots[numb] == 0) {flag = false;break;}
+					if(i == numb) {continue;}
+					if(Server.slots[i] == 1) {
+						if (against.contains("none.") && Server.against[i].contains("none")) {
+							Server.startGame(numb, i);
+							flag = false;
+							break;
+						}
+						else if (Server.users[i].contains(against) && 
+								(Server.against[i].contains("none.") || 
+								Server.against[i].contains(myName))) {
+							Server.startGame(numb, i);
+							flag = false;
+							break;
+						}
+						if (Server.against[i].contains(myName) && 
+								(against.contains("none.") || 
+								against.contains(Server.against[i]))) {
+							Server.startGame(numb, i);
+							flag = false;
+							break;
+						}
+					}
+				}catch(Throwable e) {continue;}
+			}
+		}//while
+	}//run
+	
+	private String getObject(){
+		while(true) {
+			try {
+				int btsAvailable = in.available();
+				byte[] bts = new byte[btsAvailable];
+				int btsCount =in.read(bts,0,btsAvailable);           
+				ByteArrayInputStream bis =new ByteArrayInputStream(bts);
+				ObjectInputStream ois = new ObjectInputStream(bis);
+				Object obj =ois.readObject();
+				String str = (String)obj;
+				if (str.contains(".")) {
+					return str;
+				}
+				//sleep{
+				else {continue;}}	catch (Exception e) {try {Thread.currentThread().sleep(10);} catch (InterruptedException e2) {}{}}//sleep}
+		}//while
+	}//getObj
+}//Waiter
+
+
+public class Server {
+	public static Socket[] sockets;
+	public static String[] users;
+	public static String[] against;
+	public static int[] slots;
+	public static int usersNumber;
+	public static int yourNumberIs;
+	
+	
 	public static void main(String args[]) {
+		sockets = new Socket[20];
+		users = new String[20];
+		against = new String[20];
+		slots = new int[20];
+		usersNumber = 0;
+		yourNumberIs = 0;
 		try {
 			ServerSocket ss = new ServerSocket(1113);
 			while (true) {
 				Socket s = ss.accept();
-				Socket s2 = ss.accept();
-				new Game(s, s2);
+				for (int i = 0; i < 20; i++) {
+					if (slots[i] == 0) {
+						sockets[i] = s;
+						slots[i] = 1;
+						new Waiter(s, i);
+						break;
+					}
+				}
 			}/*while*/}/*try*/ catch (Exception e) {}//catch
 		}//main
+	
+	public static void startGame(int player1, int player2) {
+		synchronized(slots) {
+			if (slots[player1] != 0 && slots[player2] != 0) {
+				new Game(sockets[player1], sockets[player2]);
+				slots[player1] = 0;
+				slots[player2] = 0;
+			}	
+		}
+		
+		
+	}
 }//Server
+
