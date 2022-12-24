@@ -33,7 +33,6 @@ public class JdbcDao {
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
 
-            System.out.println(preparedStatement);
             // Step 3: Execute the query or update query
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -54,7 +53,6 @@ public class JdbcDao {
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
 
-            System.out.println(preparedStatement);
 
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -78,7 +76,6 @@ public class JdbcDao {
                 System.err.println("Message: " + e.getMessage());
                 Throwable t = ex.getCause();
                 while (t != null) {
-                    System.out.println("Cause: " + t);
                     t = t.getCause();
                 }
             }

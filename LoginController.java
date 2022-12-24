@@ -27,6 +27,9 @@ public class LoginController {
 
     @FXML
     private Button submitButton;
+    
+    @FXML
+    private TextField enemy;
 
     @FXML
     public void login(ActionEvent event) throws SQLException {
@@ -46,6 +49,7 @@ public class LoginController {
 
         String loginId = loginField.getText();
         String password = passwordField.getText();
+        String enemyName = enemy.getText();
 
         JdbcDao jdbcDao = new JdbcDao();
         boolean flag = jdbcDao.validate(loginId, password);
@@ -54,6 +58,8 @@ public class LoginController {
             infoBox("Please enter correct login and password", null, "Failed");
         } else {
             infoBox("Login Successful!", null, "Failed");
+            model.user.login = loginId;
+            if(enemyName != "") {model.user.enemy = enemyName;}
             openMain();
         }
     }
